@@ -1,0 +1,257 @@
+/* ===========================
+   RESET DASAR
+=========================== */
+body {
+  margin: 0; /* Hilangkan margin default */
+  font-family: Arial, sans-serif; /* Gunakan font standar */
+  background: #fefefe; /* Tambahkan background dasar */
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  background-color: #0066cc; /* Warna biru */
+  display: flex; /* Flexbox untuk layout */
+  justify-content: space-between; /* Logo kiri, menu kanan */
+  align-items: center; /* Posisi vertikal tengah */
+  padding: 10px 20px; /* Spasi dalam navbar */
+}
+
+.navbar .logo img {
+  height: 80px; /* Tinggi logo default */
+  width: auto; /* Lebar otomatis */
+}
+
+.navbar .menu {
+  display: flex; /* Menu horizontal */
+  gap: 20px; /* Jarak antar item */
+}
+
+.navbar .menu a {
+  color: #fff; /* Teks putih */
+  text-decoration: none; /* Hilangkan garis bawah */
+  font-weight: bold;
+}
+
+.navbar .menu a:hover {
+  text-decoration: underline; /* Efek hover */
+}
+
+.navbar .menu a.active {
+  text-decoration: underline;
+  color: #ffcc00; /* Warna link aktif */
+}
+
+/* ===========================
+   GAMBAR UMUM
+=========================== */
+img {
+  max-width: 100%; /* Supaya gambar tidak melebihi container */
+  height: auto; /* Jaga proporsi */
+  display: block; /* Hilangkan whitespace bawah */
+}
+
+/* ===========================
+   LOGIN BOX
+=========================== */
+.login-box {
+  max-width: 350px; /* Lebar maksimal */
+  margin: 60px auto; /* Tengah layar */
+  padding: 25px;
+  border: 1px solid #ccc; /* Border tipis abu */
+  border-radius: 10px; /* Sudut melengkung */
+  background: #f9f9f9; /* Warna abu muda */
+  text-align: center;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 90%; /* Hampir penuh */
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+.login-box input[type="submit"] {
+  background: #0066cc; /* Biru */
+  color: #fff; /* Teks putih */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-box input[type="submit"]:hover {
+  background: #004c99; /* Biru lebih gelap */
+}
+
+/* ===========================
+   FLASH MESSAGE (ERROR)
+=========================== */
+.flash-msg {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px auto;
+}
+
+/* ===========================
+   KONTEN UTAMA
+=========================== */
+.container {
+  max-width: 900px;
+  margin: 0 auto; /* Tengah horizontal */
+  padding: 20px;
+}
+
+.container h1,
+.container h2,
+.container p {
+  text-align: center; /* Pusatkan teks */
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px; /* Opsional */
+}
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.container table th,
+.container table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.container ul,
+.container ol {
+  display: inline-block;
+  text-align: left; /* Isi tetap rata kiri */
+  margin: 20px auto;
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 600px) {
+  .navbar .logo img {
+    height: 50px; /* Perkecil logo */
+  }
+
+  .navbar .menu {
+    flex-direction: column; /* Menu jadi vertikal */
+    gap: 10px;
+  }
+
+  .login-box {
+    margin: 30px auto; /* Lebih rapat di HP */
+    padding: 20px;
+  }
+}
+
+/* ===========================
+   DROPDOWN MENU NAVBAR
+=========================== */
+.navbar .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .dropdown .dropbtn {
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 16px;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.navbar .dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .dropdown:hover .dropbtn {
+  text-decoration: underline;
+}
+
+/* ===========================
+   DATA MASTER MENU
+=========================== */
+.menu-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.btn-master {
+  display: inline-block;
+  padding: 15px 25px;
+  background: #0066cc;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-master:hover {
+  background: #004c99;
+}
+
+/* ===========================
+   ERROR & SUCCESS MESSAGE
+=========================== */
+.success, .error {
+    text-align: center;      /* teks rata tengah */
+    margin: 15px auto;       /* kasih jarak dan posisikan tengah */
+    width: 80%;              /* biar nggak full, tapi lebih rapih */
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
