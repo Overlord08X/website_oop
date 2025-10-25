@@ -1,5 +1,6 @@
 <?php
-session_start();
+// website_oop/php/logout.php
+require_once("auth.php"); // Memuat fungsi auth dan memulai sesi
 
 // Hapus semua data session
 $_SESSION = array();
@@ -21,5 +22,6 @@ if (ini_get("session.use_cookies")) {
 // Hancurkan session
 session_destroy();
 
+set_flash_message("Anda telah berhasil logout.", "success");
 header("Location: ./login.php");
 exit;

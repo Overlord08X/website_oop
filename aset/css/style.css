@@ -1,4 +1,33 @@
 /* ===========================
+   ERROR & SUCCESS MESSAGE
+=========================== */
+.success, .error, .info { /* Tambahkan .info */
+    text-align: center;
+    margin: 15px auto;
+    width: 80%;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.info { /* Gaya baru untuk info message */
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+/* ===========================
    RESET DASAR
 =========================== */
 body {
@@ -90,16 +119,6 @@ img {
 }
 
 /* ===========================
-   FLASH MESSAGE (ERROR)
-=========================== */
-.flash-msg {
-  color: red;
-  text-align: center;
-  font-weight: bold;
-  margin: 20px auto;
-}
-
-/* ===========================
    KONTEN UTAMA
 =========================== */
 .container {
@@ -112,14 +131,6 @@ img {
 .container h2,
 .container p {
   text-align: center; /* Pusatkan teks */
-}
-
-.container img {
-  max-width: 100%;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  border-radius: 10px; /* Opsional */
 }
 
 .container table {
@@ -215,6 +226,7 @@ img {
   justify-content: center;
   gap: 20px;
   margin: 30px 0;
+  flex-wrap: wrap; /* Agar responsif pada layar kecil */
 }
 
 .btn-master {
@@ -226,6 +238,7 @@ img {
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s;
+  margin: 5px; /* Spasi antar tombol */
 }
 
 .btn-master:hover {
@@ -233,25 +246,145 @@ img {
 }
 
 /* ===========================
-   ERROR & SUCCESS MESSAGE
+   BUTTONS (e.g., + Tambah User)
 =========================== */
-.success, .error {
-    text-align: center;      /* teks rata tengah */
-    margin: 15px auto;       /* kasih jarak dan posisikan tengah */
-    width: 80%;              /* biar nggak full, tapi lebih rapih */
-    padding: 12px;
-    border-radius: 6px;
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #28a745; /* Green */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
 }
 
-.success {
-    background: #d4edda;
+.btn:hover {
+    background: #218838; /* Darker green */
+}
+
+/* ===========================
+   ROLE BADGES (for data_user.php)
+=========================== */
+.role-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin: 2px;
+    white-space: nowrap; /* Mencegah teks pecah baris */
+}
+
+.role-badge.active {
+    background-color: #d4edda;
     color: #155724;
     border: 1px solid #c3e6cb;
 }
 
-.error {
-    background: #f8d7da;
+.role-badge.inactive {
+    background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+    opacity: 0.7;
+}
+
+/* ===========================
+   FORM ELEMENTS
+=========================== */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+    width: calc(100% - 22px); /* Full width minus padding and border */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+form button[type="submit"] {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+form a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #6c757d; /* Gray */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+form a:hover {
+    background-color: #5a6268; /* Darker gray */
+}
+
+/* ===========================
+   TABLES
+=========================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e9e9e9;
+}
+
+table td a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+table td a:hover {
+    text-decoration: underline;
 }

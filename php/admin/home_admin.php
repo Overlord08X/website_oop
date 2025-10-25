@@ -1,9 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['user']) || $_SESSION['user']['role_id'] != 1) {
-  header("Location: ../login.php");
-  exit;
-}
+require_once("../auth.php");
+require_admin_login();
 
 $nama = $_SESSION['user']['nama'];
 $role = $_SESSION['user']['role_name'];
@@ -27,6 +24,7 @@ $role = $_SESSION['user']['role_name'];
   <div class="container">
     <h1>Halo, <?= htmlspecialchars($nama) ?>!</h1>
     <p>Anda login sebagai <b><?= htmlspecialchars($role) ?></b>.</p>
+    <?php display_flash_message(); ?>
   </div>
 
   <hr />

@@ -9,15 +9,18 @@
 </head>
 
 <body>
+    <?php
+    require_once("auth.php"); // Memuat fungsi auth dan memulai sesi
+    ?>
     <div class="navbar">
         <div class="logo">
-            <img src="../aset/UNAIR_SEAL_LOGO_2025_RGB-01.png" alt="Logo RSHP" />
+            <img src="../aset/logo.png" alt="Logo RSHP" />
         </div>
         <div class="menu">
             <a href="../index.html">Home</a>
             <a href="../struktur.html">Struktur Organisasi</a>
             <a href="../layanan.html">Layanan Umum</a>
-            <a href="../visi_misi.html">Visi, Misi & Tujuan</a> <!-- ✅ perbaikan path -->
+            <a href="../visi_misi.html">Visi, Misi & Tujuan</a>
             <a href="./login.php" class="active">Login</a>
         </div>
     </div>
@@ -31,11 +34,7 @@
         </form>
 
         <?php
-        session_start();
-        if (isset($_SESSION['flash_msg'])) {
-            echo "<p class='flash-msg'>" . $_SESSION['flash_msg'] . "</p>";
-            unset($_SESSION['flash_msg']);
-        }
+        display_flash_message(); // Menampilkan flash message
         ?>
     </div>
 
